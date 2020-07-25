@@ -1,4 +1,4 @@
-# Internet And Appications
+# Internet And Applications
 
 ## CTGOV-03: Χώρες στις οποίες έχουν λάβει χώρα Κλινικές Μελέτες γύρω από μία συγκεκριμένη Ασθένεια
 
