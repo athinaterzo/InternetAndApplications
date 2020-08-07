@@ -1,7 +1,7 @@
 /.metadata/
 
 ## zip file
-/dataset
+/dataset/*
 
 ## backend
 /backendAPI/node_modules
