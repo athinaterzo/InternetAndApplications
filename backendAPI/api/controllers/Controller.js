@@ -20,10 +20,10 @@ exports.getInfo = function(req, res) {
     for(var i of trial){
       var dict = {}
       dict['nct_id']           = i.nct_id;
-      dict["elegCheckDrug"]    = i.criteria.includes(req.params.drug);
-      dict["elegCheckCond"]    = i.criteria.includes(req.params.condition);
-      dict['summaryCheckDrug'] = i.brief_summary.includes(req.params.drug) 
-      dict['summaryCheckCond'] = i.brief_summary.includes(req.params.condition); 
+      dict["elegCheckDrug"]    = i.criteria.match(new RegExp(req.params.drug, "ig"))!==null;
+      dict["elegCheckCond"]    = i.criteria.match(new RegExp(req.params.condition, "ig"))!==null;
+      dict['summaryCheckDrug'] = i.brief_summary.match(new RegExp(req.params.drug, "ig"))!==null;
+      dict['summaryCheckCond'] = i.brief_summary.match(new RegExp(req.params.condition, "ig"))!==null; 
       result.push(dict)
       //console.log(i)
     }

@@ -104,14 +104,14 @@ export default function StickyHeadTable(props) {
     handleOpen()
     console.log(input)
     
-    var resTitle = input[0].brief_title.replace(props.condition, "<span style='background-color:powderblue;'>"+props.condition+"</span>");
-    resTitle = resTitle.replace(props.drug, "<span style='background-color:powderblue;'>"+props.drug+"</span>");
+    var resTitle = input[0].brief_title.replaceAll(new RegExp(props.condition, "ig"), "<span style='background-color:powderblue;'>"+props.condition+"</span>");
+    resTitle = resTitle.replaceAll(new RegExp(props.drug, "ig"), "<span style='background-color:powderblue;'>"+props.drug+"</span>");
 
-    var resSummary = input[0].brief_summary.replace(props.condition, "<span style='background-color:powderblue;'>"+props.condition+"</span>");
-    resSummary = resSummary.replace(props.drug, "<span style='background-color:powderblue;'>"+props.drug+"</span>");
+    var resSummary = input[0].brief_summary.replaceAll(new RegExp(props.condition, "ig"), "<span style='background-color:powderblue;'>"+props.condition+"</span>");
+    resSummary = resSummary.replaceAll(new RegExp(props.drug, "ig"), "<span style='background-color:powderblue;'>"+props.drug+"</span>");
     
-    var resCriteria = input[0].criteria.replace(props.condition, "<span style='background-color:powderblue;'>"+props.condition+"</span>");
-    resCriteria = resCriteria.replace(props.drug, "<span style='background-color:powderblue;'>"+props.drug+"</span>");
+    var resCriteria = input[0].criteria.replaceAll(new RegExp(props.condition, "ig"), "<span style='background-color:powderblue;'>"+props.condition+"</span>");
+    resCriteria = resCriteria.replaceAll(new RegExp(props.drug, "ig"), "<span style='background-color:powderblue;'>"+props.drug+"</span>");
     
     document.getElementById('title').innerHTML = resTitle;
     document.getElementById('summary').innerHTML = resSummary;
