@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -116,6 +117,13 @@ export default function StickyHeadTable(props) {
     document.getElementById('title').innerHTML = resTitle;
     document.getElementById('summary').innerHTML = resSummary;
     document.getElementById('criteria').innerHTML = resCriteria;
+
+    for (var intervention of input[0].intervention){
+      var node = document.createElement('li');                 // Create a <li> node
+      var textnode = document.createTextNode(intervention.intervention_name);         // Create a text node
+      node.appendChild(textnode);                              // Append the text to <li>
+      document.getElementById('intervention').appendChild(node);  
+    }
   }
 
 
@@ -225,6 +233,8 @@ export default function StickyHeadTable(props) {
               <p id='summary'></p>
               <h3>Elegibility Criteria</h3>
               <p id='criteria'></p>
+              <h3>Intervention</h3>
+              <ul id = 'intervention'></ul>
             </div>
             </Paper>
           </Fade>

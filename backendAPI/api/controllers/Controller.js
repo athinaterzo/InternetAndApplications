@@ -15,7 +15,9 @@ exports.getTrial = function(req, res) {
 
 
 exports.getInfo = function(req, res) {
-  Trial.find({'intervention.intervention_name':{ $regex: ".*"+req.params.drug+".*", $options: 'i' },'condition.cond_name':{ $regex: ".*"+req.params.condition+".*", $options: 'i'  }},'nct_id brief_summary criteria',function(err, trial) {
+  Trial.find({'intervention.intervention_name':{ $regex: ".*"+req.params.drug+".*", $options: 'i' },
+            'condition.cond_name':{ $regex: ".*"+req.params.condition+".*", $options: 'i'  }},
+            'nct_id brief_summary criteria',function(err, trial) {
     var result = []
     for(var i of trial){
       var dict = {}
@@ -31,7 +33,7 @@ exports.getInfo = function(req, res) {
     if (err)
       res.send(err);
     res.json(result);
-  });
+  }).sort({'nct_id':1});
 };
 
 exports.getDiseases = function(req, res) {

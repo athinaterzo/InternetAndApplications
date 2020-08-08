@@ -28,7 +28,7 @@ class Header extends Component {
          <div className="banner-text">
             <h1 className="responsive-headline">Clinical trials</h1>
             <h3>In this website you can find all the clinical trials for a specific condition and drug. 
-               You can also read the brief summary and the elegibillity criteria for each trial</h3>
+               You can also read the brief summary and the elegibility criteria for each trial</h3>
             <hr />
          </div>
       </div>
