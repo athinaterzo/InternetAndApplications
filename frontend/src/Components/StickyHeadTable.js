@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -106,22 +105,22 @@ export default function StickyHeadTable(props) {
     console.log(input)
     
     var resTitle = input[0].brief_title.replaceAll(new RegExp(props.condition, "ig"), "<span style='background-color:powderblue;'>"+props.condition+"</span>");
-    resTitle = resTitle.replaceAll(new RegExp(props.drug, "ig"), "<span style='background-color:powderblue;'>"+props.drug+"</span>");
+    resTitle = resTitle.replaceAll(new RegExp(props.drug, "ig"), "<span style='background-color:#ecfe52;'>"+props.drug+"</span>");
 
     var resSummary = input[0].brief_summary.replaceAll(new RegExp(props.condition, "ig"), "<span style='background-color:powderblue;'>"+props.condition+"</span>");
-    resSummary = resSummary.replaceAll(new RegExp(props.drug, "ig"), "<span style='background-color:powderblue;'>"+props.drug+"</span>");
+    resSummary = resSummary.replaceAll(new RegExp(props.drug, "ig"), "<span style='background-color:#ecfe52;'>"+props.drug+"</span>");
     
     var resCriteria = input[0].criteria.replaceAll(new RegExp(props.condition, "ig"), "<span style='background-color:powderblue;'>"+props.condition+"</span>");
-    resCriteria = resCriteria.replaceAll(new RegExp(props.drug, "ig"), "<span style='background-color:powderblue;'>"+props.drug+"</span>");
+    resCriteria = resCriteria.replaceAll(new RegExp(props.drug, "ig"), "<span style='background-color:#ecfe52;'>"+props.drug+"</span>");
     
     document.getElementById('title').innerHTML = resTitle;
     document.getElementById('summary').innerHTML = resSummary;
     document.getElementById('criteria').innerHTML = resCriteria;
 
     for (var intervention of input[0].intervention){
-      var node = document.createElement('li');                 // Create a <li> node
-      var textnode = document.createTextNode(intervention.intervention_name);         // Create a text node
-      node.appendChild(textnode);                              // Append the text to <li>
+      var node = document.createElement('li');                                      // Create a <li> node
+      var textnode = document.createTextNode(intervention.intervention_name);       // Create a text node
+      node.appendChild(textnode);                                                   // Append the text to <li>
       document.getElementById('intervention').appendChild(node);  
     }
   }

@@ -9,10 +9,10 @@ class Footer extends Component {
      <div className="row">
         <div className="twelve columns">
            <ul className="social-links">
-              <li ><a href=''><i className='fa fa-github'></i></a></li>
-              <li ><a href=''><i className='fa fa-facebook'></i></a></li>
-              <li ><a href=''><i className='fa fa-linkedin'></i></a></li>
-              <li ><a href=''><i className='fa fa-instagram'></i></a></li>
+              <li ><a href='#home'><i className='fa fa-github'></i></a></li>
+              <li ><a href='#home'><i className='fa fa-facebook'></i></a></li>
+              <li ><a href='#home'><i className='fa fa-linkedin'></i></a></li>
+              <li ><a href='#home'><i className='fa fa-instagram'></i></a></li>
            </ul>
 
            <ul className="copyright">

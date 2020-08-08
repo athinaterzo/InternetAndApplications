@@ -53,9 +53,8 @@ class Search extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    
+    document.getElementById('result').style.display = 'block';
     if(this.state.condition.length!==0 && this.state.drug.length!==0){ 
-      document.getElementById('description').style.display = 'block';
       let url = "http://localhost:3001/info/"+this.state.drug+"/"+this.state.condition
       fetch(url)
         .then(res => res.json())
@@ -63,18 +62,20 @@ class Search extends Component {
           (result) => {
             console.log("result", result)
             if(result.length===0){
-              ReactDOM.render(<RenderError/>, document.getElementById('res'));
+              ReactDOM.render(<h3>No data found for those inputs</h3>, document.getElementById('res'));
+              document.getElementById('description').style.display = 'none';
             }
             else{
               this.setState({data:result});
+              document.getElementById('description').style.display = 'block';
               ReactDOM.render(<StickyHeadTable data={result} condition = {this.state.condition} drug = {this.state.drug} />, document.getElementById('res'));
             }
             
           },
 
           (error) => {
-          console.log('error', error)
-          ReactDOM.render(<div></div>, document.getElementById('res'));
+            console.log('error', error)
+            ReactDOM.render(<h3>Somthing went wrong</h3>, document.getElementById('res'));
           }
         )
       }
@@ -135,7 +136,7 @@ class Search extends Component {
       </div>
 
 
-      <div className="row work">
+      <div id='result' style={{display:'none'}} className="row work">
 
         <div className="three columns header-col">
           <h1><span>Result</span></h1>
@@ -160,10 +161,3 @@ class Search extends Component {
 
 export default Search;
 
-
-const RenderError = () =>{
-  return <div>
-            <h3>No data found for those inputs</h3>
-        </div> 
-  
-  }
