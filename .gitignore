@@ -1,7 +1,8 @@
 /.metadata/
 
 ## zip file
-/dataset/*
+/AllPublicXML
+AllPublicXML.zip
 
 ## backend
 /backendAPI/node_modules

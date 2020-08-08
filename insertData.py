@@ -52,7 +52,7 @@ db = client['clinicalTrials']
 collection = db['trialData']
 
 
-directory = './dataset/AllPublicXML'
+directory = './AllPublicXML'
 
 for folder in os.listdir(directory):
     if folder.endswith(".txt"):
