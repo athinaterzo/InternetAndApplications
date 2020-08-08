@@ -142,7 +142,7 @@ class Search extends Component {
           <h1><span>Result</span></h1>
           <br></br>
           <div id="description" style ={{display:'none'}}>
-            You can find the brief summart and the elegibillity criteria 
+            You can find the brief summary and the elegibility criteria 
             if you press the button with the NCT ID of the trial
           </div>
         </div>
