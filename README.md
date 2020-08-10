@@ -26,13 +26,13 @@ python insertData.py
 ### 3. Τρέχουμε τον server του frontend
 Ανοίγουμε ένα terminal μέσα στον φάκελο frontend και εκτελούμε τις ακόλουθες εντολές
 ```shell
-npm install //μία φορά
+npm install   //μία φορά
 npm start
 ```
 
 ### 4. Τρέχουμε τον server του backend
 Ανοίγουμε ένα terminal μέσα στον φάκελο backendAPI και εκτελούμε τις ακόλουθες εντολές
 ```shell
-npm install /μια φορά
+npm install   //μια φορά
 npm start
 ```
