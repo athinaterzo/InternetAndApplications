@@ -13,6 +13,15 @@
 
 ## Οδηγίες εγκατάστασης
 
+### Προαπαιτήσεις για να μπορεί να τρέξει η εφαρμογή:
+1. Python 3 (https://www.python.org/downloads/)
+
+2. Node js  (https://nodejs.org/en/download/)
+
+3. MongoDB  (https://www.mongodb.com/try/download/community)
+
+
+
 ### 1. Κάνουμε clone το project στον υπολογιστή μας
 
 ### 2. Δεδομένα
